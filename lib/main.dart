@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'models/item.dart';
 
 void main() => runApp(MyApp());
@@ -23,6 +22,10 @@ class HomePage extends StatefulWidget {
 
   HomePage() {
     items = [];
+
+    items.add(Item(title: "Item 1", done: false));
+    items.add(Item(title: "Item 2", done: false));
+    items.add(Item(title: "Item 3", done: false));
   }
 
   @override
@@ -36,10 +39,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Todo List'),
       ),
-      body: Container(
-        child: Center(
-          child: Text('Olá mundo'),
-        ),
+      body: ListView.builder(
+        itemCount: widget.items.length,
+        itemBuilder: (BuildContext cntx, int index) {
+          final item = widget.items[index].title;
+          return Text(item!); //"!" garante que o valor não é nulo
+        },
       ),
     );
   }
