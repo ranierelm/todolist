@@ -37,13 +37,34 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todo List'),
+        title: TextFormField(
+          keyboardType: TextInputType.text,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+          ),
+          decoration: InputDecoration(
+            labelText: "Nova tarefa",
+            labelStyle: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
       ),
       body: ListView.builder(
         itemCount: widget.items.length,
         itemBuilder: (BuildContext cntx, int index) {
-          final item = widget.items[index].title;
-          return Text(item!); //"!" garante que o valor não é nulo
+          final item = widget.items[index];
+
+          return CheckboxListTile(
+              title: Text(item.title!),
+              key: Key(item.title!),
+              value: item.done,
+              onChanged: (value) {
+                setState(() {
+                  item.done = value;
+                });
+              });
         },
       ),
     );
