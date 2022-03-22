@@ -4,11 +4,11 @@ Flutter todo list app
 
 ## Getting Started
 
-1 - Clone repository
-2 - Install packages : **$flutter pub get**
-3 - Open device emulator [vscode or android studio]
-4 - Start flutter : **$flutter run**
+<p>1 - Clone repository</p>
+<p>2 - Install packages : **$flutter pub get**</p>
+<p>3 - Open device emulator [vscode or android studio]</p>
+<p>4 - Start flutter : **$flutter run**</p>
 
 
-Flutter documentation
-flutter.dev/get-started
+<p>Flutter documentation</p>
+<p>flutter.dev/get-started</p>
