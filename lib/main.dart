@@ -106,15 +106,15 @@ class _HomePageState extends State<HomePage> {
 
           return Dismissible(
             child: CheckboxListTile(
-                title: Text(item.title!),
+                title: Text(item.title),
                 value: item.done,
                 onChanged: (value) {
                   setState(() {
-                    item.done = value;
+                    item.done = value!;
                     save();
                   });
                 }),
-            key: Key(item.title!),
+            key: Key(item.title),
             background: Container(
               color: Colors.blue.withOpacity(0.2),
             ),
@@ -126,7 +126,9 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: add,
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          ),
         backgroundColor: Colors.blue,
       ),
     );
